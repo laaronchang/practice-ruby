@@ -50,29 +50,33 @@
 
 class Item
   attr_reader :color, :price, :model
-  attr_writer :color
+  attr_writer :color, :price, :model
 
   def initialize(input_options)
     @color = input_options[:color]
-    @price = input_options[price]
-    @model = input_options[model]
+    @price = input_options[:price]
+    @model = input_options[:model]
   end
 
   def print_info
     p " The color is #{@color}, the price is #{@price}, and the model is #{@model}"
   end
 
+  # def print_info
+  #   p "#{@color} #{price} #{model}"
+  # end
+
   def color=(input_color)
     @color = input_color
   end
 end
 
-blender = Item.new({color: "Blue", price: 90, model: "Ultra"})
+blender = Item.new({color: "blue", price: 90, model: "Ultra"})
 pot = Item.new({color: "silver", price: 150, model: "Cora"})
 table = Item.new({color: "brown", price: 800, model: "Vega"})
 
 p blender.color
-blender.color = 'Green'
+blender.color = 'green'
 p blender.color
 
 blender.print_info
